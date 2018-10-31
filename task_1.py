@@ -33,7 +33,7 @@ def build_min_ostov(arr_adjency, edges):
             else:
                 merge_trees(names, tree_sizes, next, node_2, node_1)
         ostov.append(edge)
-    print(ostov)
+    #print(ostov)
     return ostov
 
 def get_dict_adj(arr_adjency):
@@ -50,8 +50,8 @@ def get_dict_adj(arr_adjency):
                 edges.append((dist, (i + 1, node)))
             dict_adj[i+1][node] = dist
     edges.sort(reverse=True)
-    print(edges)
-    print(dict_adj)
+    #print(edges)
+    #print(dict_adj)
     return edges, dict_adj
 
 
@@ -62,7 +62,7 @@ def parse_input_file(file='in.txt'):
         for line in lines[1:]:
             arr_line = [int(x) for x in line.split(' ') if x]
             arr_adjency.extend(arr_line)
-    print(arr_adjency)
+    #print(arr_adjency)
     return arr_adjency
 
 
@@ -79,7 +79,7 @@ def save_result(min_ostov):
             adj_list[node_1] = []
         adj_list[node_2].append(node_1)
         adj_list[node_1].append(node_2)
-    print(adj_list)
+    #print(adj_list)
     with open('out.txt', 'w') as f:
         for x in sorted(adj_list.keys()):
             line = str(x) + ' '
